@@ -43,7 +43,8 @@ int main(int argc, char* argv[])
         // check if file has .imu extension, if no take another one
         if(strcmp(file.extension, "imu") != 0)
         {
-            if(tinydir_next(&dir) == -1) {
+            if(tinydir_next(&dir) == -1)
+            {
                 printf("Error during capturing next file.\n");
                 goto error;
             }
@@ -89,7 +90,8 @@ int main(int argc, char* argv[])
         fclose(fptr);
 
         // get next file
-        if(tinydir_next(&dir) == -1) {
+        if(tinydir_next(&dir) == -1)
+        {
             printf("Error with getting next file.\n");
             goto error;
         }
@@ -114,16 +116,19 @@ error:
 
 int check_arguments(int argc)
 {
-    if(argc == 2) {
+    if(argc == 2)
+    {
         return 0;
     }
 
-    else if(argc == 1) {
+    else if(argc == 1)
+    {
         printf("Path to directory not specified!\n");
         return 1;
     }
 
-    else {
+    else 
+    {
         printf("Too many arguments!\n");
         return -1;
     }
