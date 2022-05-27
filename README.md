@@ -1,6 +1,6 @@
 # Velocity analyzer
 
-C program developed to perform analysis in gathered .imu data to find out min and max value of train velocity.
+C program developed to perform analysis in gathered .imu data to find out min and max value of velocity.
 
 
 ## Build instruction
