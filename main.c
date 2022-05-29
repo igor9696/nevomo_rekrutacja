@@ -97,17 +97,17 @@ int main(int argc, char* argv[])
         }
     }
 
-    // if velocity_min and velocity_max remain unchanged there wasn't valid data inside dir
-    if(velocity_min != INT_MAX && velocity_max != INT_MIN)
+    // if velocity_min or velocity_max remain unchanged there wasn't valid data inside dir
+    if(velocity_min == INT_MAX || velocity_max == INT_MIN)
     {
-        printf("Max velocity: %f \t Min velocity: %f\n", velocity_max, velocity_min);
+        printf("Coulnd't find any valid .imu file!\n");
         tinydir_close(&dir);
-        return 0;
+        return 1;
     }
 
-    printf("Coulnd't find any .imu file!\n");
+    printf("Max velocity: %f \t Min velocity: %f\n", velocity_max, velocity_min);
     tinydir_close(&dir);
-    return 1;
+    return 0;
 
 error:
     tinydir_close(&dir);
